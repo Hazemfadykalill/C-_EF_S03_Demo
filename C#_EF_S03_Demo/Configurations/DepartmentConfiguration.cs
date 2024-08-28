@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace C__EF_S03_Demo.Configurations
 {
-    internal class DepartmentConfiguration : IEntityTypeConfiguration<Department>
+    public class DepartmentConfiguration : IEntityTypeConfiguration<Department>
     {
         public void Configure(EntityTypeBuilder<Department> builder)
         {

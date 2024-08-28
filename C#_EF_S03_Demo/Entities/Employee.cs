@@ -14,6 +14,6 @@ namespace C__EF_S03_Demo.Entities
         public double Salary { get; set; }
         public string Address { get; set; }
         public int Dept_Id { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

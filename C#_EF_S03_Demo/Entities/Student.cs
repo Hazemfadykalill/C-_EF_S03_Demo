@@ -10,6 +10,6 @@ namespace C__EF_S03_Demo.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<StudentCourses> StudentCoursesList { get; set; }
+        public virtual List<StudentCourses> StudentCoursesList { get; set; }
     }
 }

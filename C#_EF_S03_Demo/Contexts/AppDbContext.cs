@@ -14,6 +14,7 @@ namespace C__EF_S03_Demo.Contexts
         //Connection With Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLazyLoadingProxies();
             optionsBuilder.UseSqlServer(" Server = .;Database=EFS03Demo;Trusted_Connection=True;TrustServerCertificate=True");
         }
 

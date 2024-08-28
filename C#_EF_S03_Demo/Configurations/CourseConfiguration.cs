@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace C__EF_S03_Demo.Configurations
 {
-    internal class CourseConfiguration : IEntityTypeConfiguration<Course>
+    public class CourseConfiguration : IEntityTypeConfiguration<Course>
     {
         public void Configure(EntityTypeBuilder<Course> builder)
         {
