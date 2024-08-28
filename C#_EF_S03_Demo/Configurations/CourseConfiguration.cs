@@ -9,26 +9,24 @@ using System.Threading.Tasks;
 
 namespace C__EF_S03_Demo.Configurations
 {
-    internal class DepartmentConfiguration : IEntityTypeConfiguration<Department>
+    internal class CourseConfiguration : IEntityTypeConfiguration<Course>
     {
-        public void Configure(EntityTypeBuilder<Department> builder)
+        public void Configure(EntityTypeBuilder<Course> builder)
         {
             // Primary Key
-            builder.HasKey(d => d.Id);
+            builder.HasKey(c => c.Id);
             builder.Property(e => e.Id).UseIdentityColumn(1, 3);
 
 
 
-
-            builder.Property(d => d.Name)
+            builder.Property(c => c.Name)
                 .IsRequired()  // Name is required
                 .HasMaxLength(100); // Sets a maximum length of 100 characters
 
             // Relationships
-            builder.HasMany(d => d.Employees)   // Specifies the one-to-many relationship
-                .WithOne(e => e.Department)     // Specifies the inverse navigation property in Employee
-                .HasForeignKey(e => e.Dept_Id); // Specifies the foreign key on the Employee side
-                
+            builder.HasMany(c => c.StudentCoursesList) // One-to-many relationship
+                .WithOne(sc => sc.Course) // Inverse relationship in StudentCourses entity
+                .HasForeignKey(sc => sc.Course_Id);
         }
     }
 }

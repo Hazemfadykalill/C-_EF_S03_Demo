@@ -18,10 +18,7 @@ namespace C__EF_S03_Demo.Configurations
             builder.Property(e => e.Id).UseIdentityColumn(1,3);    
 
 
-            // Properties
-            builder.Property(e => e.Id)
-                .IsRequired()  // Make sure the Id is required (default for primary keys)
-                .ValueGeneratedOnAdd(); // Automatically generates value on adding a new record
+           
 
             builder.Property(e => e.Name)
                 .IsRequired() // Name is required
