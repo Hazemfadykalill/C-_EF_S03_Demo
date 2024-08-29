@@ -18,9 +18,7 @@ namespace InheritanceExample.Configurations
             // Configure common properties
             builder.ToTable("Employees");
             
-            builder.Property(e => e.Name).HasColumnType("varchar")  .HasMaxLength(255);
-            builder.Property(e => e.Email).HasColumnType("varchar") .HasMaxLength(255);
-            builder.Property(e => e.Address).HasColumnType("varchar").HasMaxLength(255);
+          
         }
     }
 }

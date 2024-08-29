@@ -1,5 +1,6 @@
 ﻿using C__EF_S03_Demo.Contexts;
 using C__EF_S03_Demo.Entities;
+using Castle.Components.DictionaryAdapter.Xml;
 using Microsoft.EntityFrameworkCore;
 
 namespace C__EF_S03_Demo
@@ -107,7 +108,7 @@ namespace C__EF_S03_Demo
 
             #endregion
 
-            #region 2 . Lazy Loading 
+            #region 3 . Lazy Loading 
             // Steps To Achieve This Way
             // 1 . Install Package ==> Microsoft.EntityFrameworkCore.Proxies
             // 2 . Inside Method OnConfiguring use ==> optionsBuilder.UseLazyLoadingProxies();
@@ -134,6 +135,41 @@ namespace C__EF_S03_Demo
 
 
             #endregion
+
+            #region Join Operator
+            #region Fluent Syntax &Query Synatax
+            //var Result = Context.Employees.Join(Context.Departments,E=>E.Dept_Id,D=>D.Id,(E,D)=>new
+            //{
+            //    EmpId = E.Id,
+            //    EmpName = E.Name,
+            //    DeptId = D.Id,
+            //    DeptName = D.Name,
+            //});
+            //// Query Syntax
+            //Result = from E in Context.Employees
+            //         join D in Context.Departments
+            //         on E.Dept_Id equals D.Id
+
+            //         select new
+            //         {
+            //             EmpId = E.Id,
+            //             EmpName = E.Name,
+            //             DeptId = D.Id,
+            //             DeptName = D.Name,
+            //         };
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //    // { EmpId = 1, EmpName = Ahmed Ali, DeptId = 13, DeptName = HR }
+            //    // { EmpId = 4, EmpName = Mohamed Ali, DeptId = 10, DeptName = CSS }
+            //    // { EmpId = 7, EmpName = Yassin, DeptId = 7, DeptName = IT }
+            //    // { EmpId = 10, EmpName = Fady Ali, DeptId = 4, DeptName = HTML }
+            //    // { EmpId = 13, EmpName = Monaa, DeptId = 1, DeptName = DS }
+            //} 
+            #endregion
+            #endregion
+
 
 
 

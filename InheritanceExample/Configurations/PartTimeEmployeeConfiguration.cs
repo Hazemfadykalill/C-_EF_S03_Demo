@@ -17,9 +17,7 @@ namespace InheritanceExample.Configurations
             builder.ToTable("PartTimeEmployees");
 
             // Configure common properties
-            builder.Property(e => e.Name).IsRequired()   .HasColumnType("varchar");
-            builder.Property(e => e.Email).IsRequired()  .HasColumnType("varchar");
-            builder.Property(e => e.Address).IsRequired().HasColumnType("varchar");
+            
         }
     }
 }
